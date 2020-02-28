@@ -13,26 +13,38 @@ import {
 } from "semantic-ui-react";
 
 const options = [
-  { key: "m", text: "Engineering", value: "engineering" },
-  { key: "f", text: "Marketing", value: "marketing" },
-  { key: "o", text: "Front Desk", value: "front_desk" },
-  { key: "o", text: "Other", value: "other" }
+  { key: "m", text: "engineering", value: "Engineering" },
+  { key: "f", text: "marketing", value: "Marketing" },
+  { key: "z", text: "front_desk", value: "Front Desk" },
+  { key: "o", text: "other", value: "other" }
 ];
 
 class AddTicketModal extends React.Component {
-  state = {};
+  state = {
+    title: "",
+    email: "",
+    description: "",
+    department: ""
+  };
 
-  handleChange = (e, { value }) => this.setState({ value });
+  selectChange = (e, { value }) => {
+    this.setState({ value });
+  };
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+    console.log(this.state);
+  };
   render() {
     const { value } = this.state;
     return (
       <Modal
+        closeIcon
         trigger={
           <Button floated="right" primary size="large">
             Create Ticket
           </Button>
         }
-        closeIcon
       >
         <Header icon="ticket" content="Create New Ticket" />
         <Modal.Content>
@@ -42,13 +54,19 @@ class AddTicketModal extends React.Component {
               control={Input}
               label="Title"
               placeholder="Title"
+              name="title"
+              value={this.state.title}
+              onChange={this.handleChange}
             />
             <Form.Group widths="equal">
               <Form.Field
                 required
                 control={Input}
-                label="email"
-                placeholder="email"
+                label="Email"
+                placeholder="Your Email"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
               />
               <Form.Field
                 width={8}
@@ -56,7 +74,9 @@ class AddTicketModal extends React.Component {
                 control={Select}
                 label="Department"
                 options={options}
-                placeholder="Department"
+                placeholder="Select Department"
+                name="department"
+                onChange={this.selectChange}
               />
             </Form.Group>
             <Form.Group inline>
@@ -85,10 +105,13 @@ class AddTicketModal extends React.Component {
             </Form.Group>
             <Form.Field
               required
+              style={{ height: "300px" }}
               control={TextArea}
               label="Description"
               placeholder="Tell us more about the issue..."
-              style={{ height: "300px" }}
+              name="description"
+              value={this.state.description}
+              onChange={this.handleChange}
             />
             <Form.Field color="green" control={Button}>
               Submit

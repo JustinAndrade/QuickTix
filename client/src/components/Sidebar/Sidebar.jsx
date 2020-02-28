@@ -60,22 +60,24 @@ const SidebarMenu = () => (
           style={{
             display: "flex",
             padding: "1% 3%",
-            alignItems: "center"
+            alignItems: "center",
+            width: "90vw"
           }}
         >
-          <Header color="yellow" as="h1" style={{ marginRight: "20%" }}>
+          <Header color="yellow" as="h1">
             QuickTix
           </Header>
 
           <Grid.Column>
             <div style={{ display: "flex" }}>
-              <Search
+              {/* <Search
                 className="search"
                 float="left"
                 placeholder={"Search.."}
+                
 
                 // style={{ border: "1px solid purple" }}
-              />
+              /> */}
             </div>
           </Grid.Column>
           <Menu size="tiny" style={{ padding: "0" }}>
@@ -89,7 +91,7 @@ const SidebarMenu = () => (
               <Icon name="bell outline" />
             </Menu.Item>
           </Menu>
-          <Grid.Column width={4}>
+          <Grid.Column width={2}>
             <UserDropdown />
           </Grid.Column>
         </Grid>
