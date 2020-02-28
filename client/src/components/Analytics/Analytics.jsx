@@ -2,6 +2,8 @@ import React from "react";
 import {
   Container,
   Card,
+  CardHeader,
+  CardContent,
   Grid,
   Divider,
   Header,
@@ -17,6 +19,7 @@ import {
 import { Bar } from "react-chartjs-2";
 import ProgressBar from "./progressBar";
 import ResponseTrends from "./responseTrends";
+import TicketsTable from "../TicketsTable/table";
 
 import "./analytics.scss";
 import Projects from "./projects";
@@ -31,27 +34,47 @@ const Analytics = () => (
   <Container
     style={{
       border: "2px solid red",
-      marginLeft: "0 !important"
+      marginRight: "0 !important",
+      marginLeft: "0 !important",
+      width: "90vw"
     }}
   >
     <Grid
-      columns="equal"
+      stretched
+      columns={3}
       style={{
-        border: "2px solid red",
-        marginLeft: "1%",
-        marinRight: "1%"
+        border: "5px solid yellow",
+        justifyContent: "space-around",
+        margin: "auto"
       }}
     >
-      <Grid.Column>
-        <ProgressBar />
-      </Grid.Column>
-      <Grid.Column width={8}>
-        <Projects />
-      </Grid.Column>
-      <Grid.Column>
-        <ResponseTrends />
-      </Grid.Column>
+      <Grid.Row verticalAlign>
+        <Grid.Column width={4}>
+          <Card fluid>
+            <CardHeader textAlign="left">Tickets</CardHeader>
+            <CardContent></CardContent>
+            <ProgressBar />
+          </Card>
+        </Grid.Column>
+        <Grid.Column>
+          <Card fluid>
+            <CardHeader textAlign="left">Projects</CardHeader>
+            <CardContent style={{ padding: "50px 0 0 0" }}>
+              <Projects />
+            </CardContent>
+          </Card>
+        </Grid.Column>
+        <Grid.Column>
+          <Card fluid>
+            <CardHeader textAlign="left">TSR Response Trends</CardHeader>
+            <CardContent style={{ padding: "50px 0 0 0" }}>
+              <ResponseTrends />
+            </CardContent>
+          </Card>
+        </Grid.Column>
+      </Grid.Row>
     </Grid>
+    <TicketsTable />
   </Container>
 );
 

@@ -21,6 +21,8 @@ import logo from "../../qtLogo.png";
 import Analytics from "../Analytics/Analytics.jsx";
 import UserDropdown from "../Navigation/userDropdown";
 
+import "./sidebar.scss";
+
 const SidebarMenu = () => (
   <Sidebar.Pushable
     as={Segment}
@@ -51,12 +53,14 @@ const SidebarMenu = () => (
       </Menu.Item>
     </Sidebar>
 
-    <Sidebar.Pusher style={{ border: "2px solid blue", width: "90vw" }}>
+    <Sidebar.Pusher style={{ border: "2px solid blue" }}>
       <Segment style={{ backgroundColor: "#f5f7fb" }}>
         <Grid
           columns="equal"
           style={{
-            padding: "1% 3%"
+            display: "flex",
+            padding: "1% 3%",
+            alignItems: "center"
           }}
         >
           <Header color="yellow" as="h1" style={{ marginRight: "20%" }}>
@@ -66,9 +70,10 @@ const SidebarMenu = () => (
           <Grid.Column>
             <div style={{ display: "flex" }}>
               <Search
+                className="search"
                 float="left"
-                size="mini"
                 placeholder={"Search.."}
+
                 // style={{ border: "1px solid purple" }}
               />
             </div>
@@ -84,7 +89,7 @@ const SidebarMenu = () => (
               <Icon name="bell outline" />
             </Menu.Item>
           </Menu>
-          <Grid.Column width={2}>
+          <Grid.Column width={4}>
             <UserDropdown />
           </Grid.Column>
         </Grid>
