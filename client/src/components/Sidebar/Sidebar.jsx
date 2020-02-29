@@ -15,11 +15,15 @@ import {
   Sea,
   GridColumn
 } from "semantic-ui-react";
+import { Route } from "react-router-dom";
+
 // image
 import logo from "../../qtLogo.png";
-
-import Analytics from "../Analytics/Analytics.jsx";
 import UserDropdown from "../Navigation/userDropdown";
+
+// Views
+import Analytics from "../Analytics/Analytics.jsx";
+import ProfilePage from "../../pages/ProfilePage";
 
 import "./sidebar.scss";
 
@@ -96,7 +100,10 @@ const SidebarMenu = () => (
           </Grid.Column>
         </Grid>
 
-        <Analytics style={{ display: "flex", float: "left" }} />
+        {/*  Routes */}
+
+        <Route path="/welcome/tickets" component={Analytics} />
+        <Route path="/welcome/profile" component={ProfilePage} />
       </Segment>
     </Sidebar.Pusher>
   </Sidebar.Pushable>

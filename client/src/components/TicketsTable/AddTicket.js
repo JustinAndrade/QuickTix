@@ -13,9 +13,9 @@ import {
 } from "semantic-ui-react";
 
 const options = [
-  { key: "m", text: "engineering", value: "Engineering" },
-  { key: "f", text: "marketing", value: "Marketing" },
-  { key: "z", text: "front_desk", value: "Front Desk" },
+  { key: "m", text: "Engineering", value: "Engineering" },
+  { key: "f", text: "Marketing", value: "Marketing" },
+  { key: "z", text: "Front Desk", value: "Front Desk" },
   { key: "o", text: "other", value: "other" }
 ];
 
@@ -39,6 +39,7 @@ class AddTicketModal extends React.Component {
     const { value } = this.state;
     return (
       <Modal
+        style={{ padding: "1%" }}
         closeIcon
         trigger={
           <Button floated="right" primary size="large">
@@ -69,7 +70,6 @@ class AddTicketModal extends React.Component {
                 onChange={this.handleChange}
               />
               <Form.Field
-                width={8}
                 required
                 control={Select}
                 label="Department"
@@ -77,30 +77,6 @@ class AddTicketModal extends React.Component {
                 placeholder="Select Department"
                 name="department"
                 onChange={this.selectChange}
-              />
-            </Form.Group>
-            <Form.Group inline>
-              <label>Quantity</label>
-              <Form.Field
-                control={Radio}
-                label="One"
-                value="1"
-                checked={value === "1"}
-                onChange={this.handleChange}
-              />
-              <Form.Field
-                control={Radio}
-                label="Two"
-                value="2"
-                checked={value === "2"}
-                onChange={this.handleChange}
-              />
-              <Form.Field
-                control={Radio}
-                label="Three"
-                value="3"
-                checked={value === "3"}
-                onChange={this.handleChange}
               />
             </Form.Group>
             <Form.Field
