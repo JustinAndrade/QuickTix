@@ -1,13 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   Container,
   Header,
   Button,
   Segment,
   Grid,
-  Divider,
-  TextArea
+  Card,
+  Advertisement
 } from "semantic-ui-react";
 
 import "./marketing.scss";
@@ -38,7 +38,7 @@ const MarketingPage = () => {
           </Header.Subheader>
         </Header>
       </Container>
-      <Segment>
+      <Container>
         <Header as="h3" textAlign="center">
           <Header.Content>Features</Header.Content>
           <Header.Subheader>Our Solutions</Header.Subheader>
@@ -58,8 +58,8 @@ const MarketingPage = () => {
             <h1>Hi</h1>
           </Grid.Column>
         </Grid>
-      </Segment>
-      <Segment>
+      </Container>
+      <Container>
         <Grid relaxed columns={2}>
           <Grid.Column></Grid.Column>
           <Grid.Column style={{ paddingLeft: "5%" }}>
@@ -95,44 +95,124 @@ const MarketingPage = () => {
             </Grid>
           </Grid.Column>
         </Grid>
-      </Segment>
-      <Segment>
+      </Container>
+      <Container>
         <Grid relaxed columns={2}>
           <Grid.Column style={{ paddingLeft: "10%" }}>
-            <Header as="h3" textAlign="left">
-              <Header.Content>Features</Header.Content>
-              <Header.Subheader>We Help You</Header.Subheader>
-            </Header>
-            <Grid>
-              <Grid.Row>
-                <Grid.Column textAlign="left">
-                  <Header as="h4">Best Performance</Header>
-                  <Header.Subheader>
-                    A complete about face in it's core economy Amsterdams.
-                  </Header.Subheader>
+            <Container text textAlign="left">
+              <Header as="h3" textAlign="left">
+                <Header.Content>Features</Header.Content>
+                <Header.Subheader>We Help You</Header.Subheader>
+              </Header>
+              <p>
+                Please answer the questions in this questionnaire. Your feedback
+                is very valuable and will help me improve this extension.
+                https://goo.gl/forms/5emac4WyQv7CWZOK2
+              </p>
+              <Grid columns={2}>
+                <Grid.Column>
+                  <Grid.Row textAlign="left">
+                    <Header as="h4">Best Performance</Header>
+                  </Grid.Row>
+                  <Grid.Row>
+                    <Header.Subheader>
+                      A complete about face in it's core economy Amsterdams.
+                    </Header.Subheader>
+                  </Grid.Row>
                 </Grid.Column>
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column textAlign="left">
-                  <Header as="h4">Best Performance</Header>
-                  <Header.Subheader>
-                    A complete about face in it's core economy Amsterdams.
-                  </Header.Subheader>
+                <Grid.Column>
+                  <Grid.Row textAlign="left">
+                    <Header as="h4">Best Performance</Header>
+                  </Grid.Row>
+                  <Grid.Row>
+                    <Header.Subheader>
+                      A complete about face in it's core economy Amsterdams.
+                    </Header.Subheader>
+                  </Grid.Row>
                 </Grid.Column>
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column textAlign="left">
-                  <Header as="h4">Best Performance</Header>
-                  <Header.Subheader>
-                    A complete about face in it's core economy Amsterdams.
-                  </Header.Subheader>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
+                <Button>Hello</Button>
+              </Grid>
+            </Container>
           </Grid.Column>
           <Grid.Column></Grid.Column>
         </Grid>
-      </Segment>
+      </Container>
+
+      <Container>
+        <Header as="h4">Packages</Header>
+        <Header.Subheader>Pricing</Header.Subheader>
+        <p>
+          At QuickTix, we know resolving a problem in a timely manner matters
+          most. Built with fffiency and balancing the workload in mind!
+        </p>
+
+        <Grid relaxed columns={3} style={{ paddingLeft: "3.5%" }}>
+          <Grid.Column>
+            <Card>
+              <Card.Header>
+                Basic <br />
+                $65.99
+                <br /> Yearly
+              </Card.Header>
+              <Card.Content>
+                <Card.Description>Insert Description</Card.Description>
+              </Card.Content>
+              <Card.Content extra>
+                <Button>Get Trial</Button>
+                <br />
+                <Link to="/trial">Get a free trial</Link>
+              </Card.Content>
+            </Card>
+          </Grid.Column>
+
+          <Grid.Column>
+            <Card>
+              <Card.Header>
+                Basic <br />
+                $65.99
+                <br /> Yearly
+              </Card.Header>
+              <Card.Content>
+                <Card.Description>Insert Description</Card.Description>
+              </Card.Content>
+              <Card.Content extra>
+                <Button>Get Trial</Button>
+                <br />
+                <Link to="/trial">Get a free trial</Link>
+              </Card.Content>
+            </Card>
+          </Grid.Column>
+
+          <Grid.Column>
+            <Card>
+              <Card.Header>
+                Basic <br />
+                $65.99
+                <br /> Yearly
+              </Card.Header>
+              <Card.Content>
+                <Card.Description>Insert Description</Card.Description>
+              </Card.Content>
+              <Card.Content extra>
+                <Button>Get Trial</Button>
+                <br />
+                <Link to="/trial">Get a free trial</Link>
+              </Card.Content>
+            </Card>
+          </Grid.Column>
+        </Grid>
+        <Segment>
+          <Grid columns={2}>
+            <Grid.Column>
+              <p>10,000+ professionals are recommending QuickTix.</p>
+            </Grid.Column>
+            <Grid.Column>
+              <Button>Get Started Now</Button>
+              <Button>Watch Trailer</Button>
+            </Grid.Column>
+          </Grid>
+        </Segment>
+      </Container>
     </>
   );
 };
