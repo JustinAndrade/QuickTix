@@ -1,9 +1,57 @@
+.layout {
+  color: #fff;
+
+  background-image: url("../../assets/background.jpg");
+  height: 90vh;
+}
+
+h1 {
+  width: 50%;
+  text-align: left;
+}
+
 nav {
-  width: 30%;
+  width: 50%;
   display: flex;
+  justify-content: flex-end;
   align-self: center;
   a {
+    font-size: 1.4rem;
+    color: #fff;
     margin: 0 2%;
     text-decoration: none;
+  }
+}
+.headerButton {
+  color: #fff !important;
+  border-radius: 50px !important;
+  padding: 2% 4% !important;
+  margin-top: 3% !important;
+  font-size: 1.2rem !important;
+  &:first-child {
+    background: #9818d6;
+    margin-right: 3%;
+  }
+  &:last-child {
+    background: none;
+    border: 1px solid #fff;
+  }
+}
+
+.laptopVec {
+  height: 55%;
+  width: auto;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: -12%;
+}
+
+.solutions {
+  h4 {
+    color: #1e052a;
+    font-size: 1.3rem;
   }
 }
