@@ -7,7 +7,8 @@ import {
   Segment,
   Grid,
   Card,
-  Icon
+  Icon,
+  Statistic
 } from "semantic-ui-react";
 
 import laptop from "../../assets/LaptopVector.png";
@@ -19,9 +20,9 @@ const MarketingPage = () => {
     <>
       <div className="layout">
         <Container
+          className="topBar"
           style={{
             display: "flex",
-            justifyContent: "space-between",
             padding: "2%",
             paddingBottom: "5px",
             borderBottom: "1px solid white",
@@ -32,9 +33,12 @@ const MarketingPage = () => {
         >
           <h1>QuickTix</h1>
           <nav>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about-us">About us</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/">Features</NavLink>
+            <NavLink to="/about-us">Instructions</NavLink>
+            <NavLink to="/contact">Process</NavLink>
+            <NavLink to="/contact">Feedback</NavLink>
+            <NavLink to="/contact">Pricing</NavLink>
+            <NavLink to="/contact">Get The App</NavLink>
           </nav>
         </Container>
         <Container style={{ marginTop: "10%" }}>
@@ -58,59 +62,67 @@ const MarketingPage = () => {
           alt="laptop displaying charts"
         />
       </div>
+
       <Container style={{ marginTop: "20%" }}>
         <Header as="h3" textAlign="center">
-          <Header.Content
-            style={{
-              color: "#FBBC00",
-              fontSize: "2rem",
-              letterSpacing: ".5rem"
-            }}
-          >
-            Features
-          </Header.Content>
-          <Header.Subheader
-            style={{
-              color: "#1e052a",
-              fontSize: "3rem",
-              fontWeight: "bold",
-              margin: "2% 0 7% 0"
-            }}
-          >
+          <Header.Content className="topText">Features</Header.Content>
+          <Header.Subheader className="bottomText">
             Our Solutions
           </Header.Subheader>
         </Header>
         <Container className="solutions">
           <Grid relaxed columns={4}>
             <Grid.Column>
-              <Icon circular name="expand arrows alternate" size="huge" />
+              <Icon
+                style={{ background: "#E8EAF9", color: "#1833C8" }}
+                circular
+                name="expand arrows alternate"
+                size="huge"
+              />
               <h4>Expand Your Reach</h4>
               <p>A complete about-face in its core economy Amsterdams</p>
             </Grid.Column>
             <Grid.Column>
-              <Icon circular name="eye" size="huge" />
+              <Icon
+                style={{ background: "#FEF9ED", color: "#FDC75D" }}
+                circular
+                name="eye"
+                size="huge"
+              />
               <h4>Higher Annualized Growth</h4>
               <p>A complete about-face in its core economy Amsterdams</p>
             </Grid.Column>
             <Grid.Column>
-              <Icon circular name="sync" size="huge" />
+              <Icon
+                style={{ background: "#FEF1EE", color: "#E88262" }}
+                circular
+                name="sync"
+                size="huge"
+              />
               <h4>Book Your Provider</h4>
               <p>Amsterdams progressive multicultural conscientious</p>
             </Grid.Column>
             <Grid.Column>
-              <Icon circular name="universal access" size="huge" />
+              <Icon
+                style={{ background: "#F9F0FF", color: "#BB6AE7" }}
+                circular
+                name="universal access"
+                size="huge"
+              />
               <h4>Secure multi-usable</h4>
               <p>Core economy Amsterdams progressive multi</p>
             </Grid.Column>
           </Grid>
         </Container>
-        <Container>
+        <Container style={{ marginTop: "20%" }}>
           <Grid relaxed columns={2}>
             <Grid.Column></Grid.Column>
             <Grid.Column style={{ paddingLeft: "5%" }}>
               <Header as="h3" textAlign="left">
-                <Header.Content>Features</Header.Content>
-                <Header.Subheader>Why Choose Us</Header.Subheader>
+                <Header.Content className="topText">Features</Header.Content>
+                <Header.Subheader className="bottomText">
+                  Why Choose Us
+                </Header.Subheader>
               </Header>
               <Grid>
                 <Grid.Row>
@@ -141,13 +153,15 @@ const MarketingPage = () => {
             </Grid.Column>
           </Grid>
         </Container>
-        <Container>
+        <Container style={{ marginTop: "20%" }}>
           <Grid relaxed columns={2}>
             <Grid.Column style={{ paddingLeft: "10%" }}>
               <Container text textAlign="left">
                 <Header as="h3" textAlign="left">
-                  <Header.Content>Features</Header.Content>
-                  <Header.Subheader>We Help You</Header.Subheader>
+                  <Header.Content className="topText">Features</Header.Content>
+                  <Header.Subheader className="bottomText">
+                    We Help You
+                  </Header.Subheader>
                 </Header>
                 <p>
                   Please answer the questions in this questionnaire. Your
@@ -157,17 +171,34 @@ const MarketingPage = () => {
                 <Grid columns={2}>
                   <Grid.Column>
                     <Grid.Row textAlign="left">
-                      <Header as="h4">Best Performance</Header>
+                      <Header as="h4">
+                        <Icon name="cubes" color="pink" />
+                        Best Performance
+                      </Header>
                     </Grid.Row>
                     <Grid.Row>
                       <Header.Subheader>
                         A complete about face in it's core economy Amsterdams.
                       </Header.Subheader>
                     </Grid.Row>
+                    <Button
+                      style={{
+                        background: "#9818d6",
+                        color: "#fff",
+                        fontSize: "1.4rem",
+                        width: "60%",
+                        marginTop: "15%"
+                      }}
+                    >
+                      I'm Interested
+                    </Button>
                   </Grid.Column>
                   <Grid.Column>
                     <Grid.Row textAlign="left">
-                      <Header as="h4">Best Performance</Header>
+                      <Header as="h4">
+                        <Icon name="cubes" color="blue" />
+                        Best Performance
+                      </Header>
                     </Grid.Row>
                     <Grid.Row>
                       <Header.Subheader>
@@ -175,7 +206,6 @@ const MarketingPage = () => {
                       </Header.Subheader>
                     </Grid.Row>
                   </Grid.Column>
-                  <Button>Hello</Button>
                 </Grid>
               </Container>
             </Grid.Column>
@@ -184,69 +214,198 @@ const MarketingPage = () => {
         </Container>
       </Container>
 
-      <Container>
-        <Header as="h4">Packages</Header>
-        <Header.Subheader>Pricing</Header.Subheader>
+      <Container style={{ marginTop: "10%" }}>
+        <Header className="topText" as="h4">
+          Packages
+        </Header>
+        <Header.Subheader className="bottomText">Pricing</Header.Subheader>
         <p>
           At QuickTix, we know resolving a problem in a timely manner matters
           most. Built with fffiency and balancing the workload in mind!
         </p>
 
-        <Grid relaxed columns={3} style={{ paddingLeft: "3.5%" }}>
+        <Grid
+          relaxed
+          columns={3}
+          style={{ paddingLeft: "3.5%", textAlign: "center" }}
+        >
           <Grid.Column>
-            <Card>
+            <Card
+              className="card"
+              style={{
+                boxShadow: "0 -10px 0 #9818d6",
+                border: "1px solid #9818d6"
+              }}
+            >
               <Card.Header>
-                Basic <br />
-                $65.99
-                <br /> Yearly
+                <h3 className="cardText">Standard</h3>
+                <Statistic>
+                  <Statistic.Value>$65.99</Statistic.Value>
+                  <Statistic.Label
+                    style={{
+                      margin: "0 auto 10px"
+                    }}
+                  >
+                    Yearly
+                  </Statistic.Label>
+                </Statistic>
               </Card.Header>
               <Card.Content>
-                <Card.Description>Insert Description</Card.Description>
+                <Card.Description className="cardDescription">
+                  <h5>Great job, Small Work</h5>
+                  <ul>
+                    <li>50 GB Bandwith</li>
+                    <li>Business &amp; Finance</li>
+                    <li>24 hour support</li>
+                    <li>Customer Management</li>
+                  </ul>
+                </Card.Description>
               </Card.Content>
               <Card.Content extra>
-                <Button>Get Trial</Button>
+                <Button
+                  style={{
+                    background: "none",
+                    background: " #9818d6",
+                    color: "#fff"
+                  }}
+                >
+                  Choose Plan
+                </Button>
                 <br />
-                <Link to="/trial">Get a free trial</Link>
+                <Link to="/trial">Get Your 30 day free trial</Link>
               </Card.Content>
             </Card>
           </Grid.Column>
 
           <Grid.Column>
-            <Card>
+            <Card
+              className="card"
+              style={{
+                boxShadow: "0 -10px 0 #fbbc00",
+                border: "1px solid #fbbc00"
+              }}
+            >
               <Card.Header>
-                Basic <br />
-                $65.99
-                <br /> Yearly
+                <h3 className="cardText">Standard</h3>
+                <Statistic>
+                  <Statistic.Value>$65.99</Statistic.Value>
+                  <Statistic.Label
+                    style={{
+                      margin: "0 auto 10px"
+                    }}
+                  >
+                    Yearly
+                  </Statistic.Label>
+                </Statistic>
               </Card.Header>
               <Card.Content>
-                <Card.Description>Insert Description</Card.Description>
+                <Card.Description className="cardDescription">
+                  <h5>Great job, Small Work</h5>
+                  <ul>
+                    <li>50 GB Bandwith</li>
+                    <li>Business &amp; Finance</li>
+                    <li>24 hour support</li>
+                    <li>Customer Management</li>
+                  </ul>
+                </Card.Description>
               </Card.Content>
               <Card.Content extra>
-                <Button>Get Trial</Button>
+                <Button
+                  style={{
+                    background: "none",
+                    background: " #fbbc00",
+                    color: "#fff"
+                  }}
+                >
+                  Choose Plan
+                </Button>
                 <br />
-                <Link to="/trial">Get a free trial</Link>
+                <Link to="/trial">Get Your 30 day free trial</Link>
               </Card.Content>
             </Card>
           </Grid.Column>
 
           <Grid.Column>
-            <Card>
+            <Card
+              className="card"
+              style={{
+                boxShadow: "0 -10px 0 #1e052a",
+                border: "1px solid #1e052a"
+              }}
+            >
               <Card.Header>
-                Basic <br />
-                $65.99
-                <br /> Yearly
+                <h3 className="cardText">Standard</h3>
+                <Statistic>
+                  <Statistic.Value>$65.99</Statistic.Value>
+                  <Statistic.Label
+                    style={{
+                      margin: "0 auto 10px"
+                    }}
+                  >
+                    Yearly
+                  </Statistic.Label>
+                </Statistic>
               </Card.Header>
               <Card.Content>
-                <Card.Description>Insert Description</Card.Description>
+                <Card.Description className="cardDescription">
+                  <h5>Great job, Small Work</h5>
+                  <ul>
+                    <li>50 GB Bandwith</li>
+                    <li>Business &amp; Finance</li>
+                    <li>24 hour support</li>
+                    <li>Customer Management</li>
+                  </ul>
+                </Card.Description>
               </Card.Content>
               <Card.Content extra>
-                <Button>Get Trial</Button>
+                <Button
+                  style={{
+                    background: "none",
+                    background: " #1e052a",
+                    color: "#fff"
+                  }}
+                >
+                  Choose Plan
+                </Button>
                 <br />
-                <Link to="/trial">Get a free trial</Link>
+                <Link to="/trial">Get Your 30 day free trial</Link>
               </Card.Content>
             </Card>
           </Grid.Column>
         </Grid>
+        <Segment>
+          <Grid columns={2}>
+            <Grid.Column>
+              <p>10,000+ professionals are recommending QuickTix.</p>
+            </Grid.Column>
+            <Grid.Column>
+              <Button>Get Started Now</Button>
+              <Button>Watch Trailer</Button>
+            </Grid.Column>
+          </Grid>
+        </Segment>
+        <Segment>
+          <Grid columns={2}>
+            <Grid.Column>
+              <p>10,000+ professionals are recommending QuickTix.</p>
+            </Grid.Column>
+            <Grid.Column>
+              <Button>Get Started Now</Button>
+              <Button>Watch Trailer</Button>
+            </Grid.Column>
+          </Grid>
+        </Segment>
+        <Segment>
+          <Grid columns={2}>
+            <Grid.Column>
+              <p>10,000+ professionals are recommending QuickTix.</p>
+            </Grid.Column>
+            <Grid.Column>
+              <Button>Get Started Now</Button>
+              <Button>Watch Trailer</Button>
+            </Grid.Column>
+          </Grid>
+        </Segment>
         <Segment>
           <Grid columns={2}>
             <Grid.Column>

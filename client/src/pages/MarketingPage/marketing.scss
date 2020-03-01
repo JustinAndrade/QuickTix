@@ -1,25 +1,61 @@
+h3,
+h4 {
+  color: #1e052a !important;
+}
+
+h4 {
+  margin: 15px 0 !important;
+}
+
+p {
+  color: #838589 !important;
+}
+
 .layout {
   color: #fff;
-
-  background-image: url("../../assets/background.jpg");
+  background-position-x: 50%;
+  background-image: url("../../assets/overlayElements.jpg");
+  // background-image: url("../../assets/background.jpg");
   height: 90vh;
+  @media screen and (max-width: 1224px) {
+    background-position: 100%;
+  }
+}
+.topBar {
+  h1 {
+    width: 30%;
+    text-align: left;
+    font-size: 3.2rem;
+    letter-spacing: 10px;
+    @media screen and (max-width: 800px) {
+      font-size: 1.9rem;
+    }
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    a {
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 2%;
+      text-decoration: none;
+      text-shadow: 1px 1px 5px #000;
+      @media screen and (max-width: 1224px) {
+        font-size: 0.9rem;
+      }
+      @media screen and (max-width: 800px) {
+        font-size: 0.8rem;
+      }
+    }
+  }
 }
 
-h1 {
-  width: 50%;
-  text-align: left;
-}
-
-nav {
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
-  align-self: center;
-  a {
-    font-size: 1.4rem;
-    color: #fff;
-    margin: 0 2%;
-    text-decoration: none;
+h2 {
+  @media screen and (max-width: 1224px) {
+    font-size: 2.9rem !important;
   }
 }
 .headerButton {
@@ -49,9 +85,56 @@ nav {
   bottom: -12%;
 }
 
+.topText {
+  color: #fbbc00 !important;
+  font-size: 2rem !important;
+  letter-spacing: 0.5rem !important;
+}
+.bottomText {
+  color: #1e052a !important;
+  font-size: 3rem !important;
+  font-weight: bold !important;
+  margin: 2% 0 7% 0 !important;
+}
+
 .solutions {
   h4 {
     color: #1e052a;
     font-size: 1.3rem;
+  }
+}
+
+.card {
+  border-radius: 20px !important;
+  margin-top: 5rem !important;
+  height: 85% !important;
+  .cardText {
+    font-size: 2rem;
+  }
+  .cardDescription {
+    padding-top: 20px;
+    h5 {
+      font-size: 1.3rem;
+      color: #1e052a;
+    }
+    ul {
+      color: #838589;
+      margin-right: 15%;
+      text-align: center;
+      list-style-type: none;
+      li {
+        margin: 5% 0;
+      }
+    }
+  }
+  button {
+    width: 60% !important;
+    padding: 7% 5% !important;
+    border-radius: 50px !important;
+    margin: 10px 0 !important;
+  }
+
+  a {
+    text-decoration: underline;
   }
 }
