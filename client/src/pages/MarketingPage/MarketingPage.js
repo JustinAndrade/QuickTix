@@ -12,6 +12,7 @@ import {
 } from "semantic-ui-react";
 
 import laptop from "../../assets/LaptopVector.png";
+import dashSamp from "../../assets/dashboardSample.png";
 
 import "./marketing.scss";
 
@@ -41,14 +42,8 @@ const MarketingPage = () => {
             <NavLink to="/contact">Get The App</NavLink>
           </nav>
         </Container>
-        <Container style={{ marginTop: "10%" }}>
-          <Header
-            as="h2"
-            icon
-            textAlign="center"
-            size="huge"
-            style={{ fontSize: "4.5rem", color: "#FFF" }}
-          >
+        <Container style={{ marginTop: "7%" }}>
+          <Header as="h2" icon textAlign="center" size="huge">
             <Header.Content>Task managment done right!</Header.Content>
             <Header.Subheader>
               <Button className="headerButton">Get Started Now</Button>
@@ -116,7 +111,13 @@ const MarketingPage = () => {
         </Container>
         <Container style={{ marginTop: "20%" }}>
           <Grid relaxed columns={2}>
-            <Grid.Column></Grid.Column>
+            <Grid.Column>
+              <img
+                src={laptop}
+                alt="laptop display data"
+                className="chooseVec"
+              />
+            </Grid.Column>
             <Grid.Column style={{ paddingLeft: "5%" }}>
               <Header as="h3" textAlign="left">
                 <Header.Content className="topText">Features</Header.Content>
@@ -155,7 +156,7 @@ const MarketingPage = () => {
         </Container>
         <Container style={{ marginTop: "20%" }}>
           <Grid relaxed columns={2}>
-            <Grid.Column style={{ paddingLeft: "10%" }}>
+            <Grid.Column style={{}}>
               <Container text textAlign="left">
                 <Header as="h3" textAlign="left">
                   <Header.Content className="topText">Features</Header.Content>
@@ -209,11 +210,16 @@ const MarketingPage = () => {
                 </Grid>
               </Container>
             </Grid.Column>
-            <Grid.Column></Grid.Column>
+            <Grid.Column>
+              <img
+                src={dashSamp}
+                alt="laptop display data"
+                className="dashSamp"
+              />
+            </Grid.Column>
           </Grid>
         </Container>
       </Container>
-
       <Container style={{ marginTop: "10%" }}>
         <Header className="topText" as="h4">
           Packages
@@ -373,50 +379,74 @@ const MarketingPage = () => {
             </Card>
           </Grid.Column>
         </Grid>
-        <Segment>
-          <Grid columns={2}>
+        <Segment style={{ border: "none" }}>
+          <Grid
+            className="marketing"
+            columns={2}
+            style={{ background: "#9818d6" }}
+          >
             <Grid.Column>
-              <p>10,000+ professionals are recommending QuickTix.</p>
+              <h5 style={{ margin: "auto 0" }}>
+                10,000+ professionals are recommending QuickTix.
+              </h5>
             </Grid.Column>
-            <Grid.Column>
-              <Button>Get Started Now</Button>
-              <Button>Watch Trailer</Button>
-            </Grid.Column>
-          </Grid>
-        </Segment>
-        <Segment>
-          <Grid columns={2}>
-            <Grid.Column>
-              <p>10,000+ professionals are recommending QuickTix.</p>
-            </Grid.Column>
-            <Grid.Column>
-              <Button>Get Started Now</Button>
-              <Button>Watch Trailer</Button>
-            </Grid.Column>
-          </Grid>
-        </Segment>
-        <Segment>
-          <Grid columns={2}>
-            <Grid.Column>
-              <p>10,000+ professionals are recommending QuickTix.</p>
-            </Grid.Column>
-            <Grid.Column>
-              <Button>Get Started Now</Button>
-              <Button>Watch Trailer</Button>
+            <Grid.Column
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+            >
+              <Button style={{ background: "#fbbc00" }}>Get Started Now</Button>
+              <Button style={{ background: "#fbbc00" }}>Watch Trailer</Button>
             </Grid.Column>
           </Grid>
         </Segment>
-        <Segment>
-          <Grid columns={2}>
+        <Container style={{ marginTop: "20%" }}>
+          <Header as="h3" textAlign="center">
+            <Header.Content className="topText">Process</Header.Content>
+            <Header.Subheader className="bottomText">
+              How it Works
+            </Header.Subheader>
+            <p>
+              With great details and an excellent managment system, QuickTix
+              gets you the data you need in a timely manner. Focus tasks by
+              priority and contineu building onto projects.
+            </p>
+          </Header>
+          <Grid columns={3}>
             <Grid.Column>
-              <p>10,000+ professionals are recommending QuickTix.</p>
+              <Card>
+                <Icon name="coffee" size="massive" />
+              </Card>
+              <p>
+                With great details and an excellent managment system, QuickTix
+                gets you the data you need in a timely manner. Focus tasks by
+                priority and contineu building onto projects.
+              </p>
             </Grid.Column>
             <Grid.Column>
-              <Button>Get Started Now</Button>
-              <Button>Watch Trailer</Button>
+              <Card>
+                <Icon name="coffee" size="massive" />
+              </Card>
+              <p>
+                With great details and an excellent managment system, QuickTix
+                gets you the data you need in a timely manner. Focus tasks by
+                priority and contineu building onto projects.
+              </p>
+            </Grid.Column>
+            <Grid.Column>
+              <Card>
+                <Icon name="coffee" size="massive" />
+              </Card>
+              <p>
+                With great details and an excellent managment system, QuickTix
+                gets you the data you need in a timely manner. Focus tasks by
+                priority and contineu building onto projects.
+              </p>
             </Grid.Column>
           </Grid>
-        </Segment>
+        </Container>
       </Container>
     </>
   );
