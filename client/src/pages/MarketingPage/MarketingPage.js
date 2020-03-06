@@ -8,7 +8,8 @@ import {
   Grid,
   Card,
   Icon,
-  Statistic
+  Statistic,
+  Divider
 } from "semantic-ui-react";
 
 import laptop from "../../assets/LaptopVector.png";
@@ -19,30 +20,26 @@ import "./marketing.scss";
 const MarketingPage = () => {
   return (
     <>
-      <div className="layout">
-        <Container
-          className="topBar"
-          style={{
-            display: "flex",
-            padding: "2%",
-            paddingBottom: "5px",
-            borderBottom: "1px solid white",
-            borderBottom: "1px solid rgba(255, 255, 255, .5)",
-            webkitBackgroundClip: "padding-box",
-            backgroundClip: "padding-box"
-          }}
-        >
-          <h1>QuickTix</h1>
-          <nav>
-            <NavLink to="/">Features</NavLink>
-            <NavLink to="/about-us">Instructions</NavLink>
-            <NavLink to="/contact">Process</NavLink>
-            <NavLink to="/contact">Feedback</NavLink>
-            <NavLink to="/contact">Pricing</NavLink>
-            <NavLink to="/contact">Get The App</NavLink>
-          </nav>
-        </Container>
-        <Container style={{ marginTop: "7%" }}>
+      <Container
+        className="topBar"
+        style={{
+          display: "flex",
+          borderBottom: "1px solid rgba(255, 255, 255, .5)",
+          webkitBackgroundClip: "padding-box",
+          backgroundClip: "padding-box"
+        }}
+      >
+        <h1>SwiftTix</h1>
+        <nav>
+          <NavLink to="/">Features</NavLink>
+          <NavLink to="/about-us">Instructions</NavLink>
+          <NavLink to="/contact">Process</NavLink>
+          <NavLink to="/contact">Feedback</NavLink>
+          <NavLink to="/contact">Pricing</NavLink>
+        </nav>
+      </Container>
+      <div className="layout" style={{ paddingTop: "7%" }}>
+        <Container>
           <Header as="h2" icon textAlign="center" size="huge">
             <Header.Content>Task managment done right!</Header.Content>
             <Header.Subheader>
@@ -128,6 +125,15 @@ const MarketingPage = () => {
               <Grid>
                 <Grid.Row>
                   <Grid.Column textAlign="left">
+                    <Statistic size="small" floated="left">
+                      <Statistic.Value
+                        style={{
+                          color: "#838589 "
+                        }}
+                      >
+                        01
+                      </Statistic.Value>
+                    </Statistic>
                     <Header as="h4">Best Performance</Header>
                     <Header.Subheader>
                       A complete about face in it's core economy Amsterdams.
@@ -136,6 +142,15 @@ const MarketingPage = () => {
                 </Grid.Row>
                 <Grid.Row>
                   <Grid.Column textAlign="left">
+                    <Statistic size="small" floated="left">
+                      <Statistic.Value
+                        style={{
+                          color: "#838589 "
+                        }}
+                      >
+                        02
+                      </Statistic.Value>
+                    </Statistic>
                     <Header as="h4">Best Performance</Header>
                     <Header.Subheader>
                       A complete about face in it's core economy Amsterdams.
@@ -144,6 +159,15 @@ const MarketingPage = () => {
                 </Grid.Row>
                 <Grid.Row>
                   <Grid.Column textAlign="left">
+                    <Statistic size="small" floated="left">
+                      <Statistic.Value
+                        style={{
+                          color: "#838589 "
+                        }}
+                      >
+                        03
+                      </Statistic.Value>
+                    </Statistic>
                     <Header as="h4">Best Performance</Header>
                     <Header.Subheader>
                       A complete about face in it's core economy Amsterdams.
@@ -417,37 +441,107 @@ const MarketingPage = () => {
           <Grid columns={3}>
             <Grid.Column>
               <Card>
-                <Icon name="coffee" size="massive" />
+                <Icon
+                  size="large"
+                  circular
+                  style={{
+                    position: "absolute",
+                    marginLeft: "4%",
+                    color: "#fff",
+                    background: "#fbbc00"
+                  }}
+                >
+                  1
+                </Icon>
+                <Icon
+                  name="eye"
+                  size="massive"
+                  style={{ margin: "auto", color: "#9818d6" }}
+                />
               </Card>
-              <p>
-                With great details and an excellent managment system, QuickTix
-                gets you the data you need in a timely manner. Focus tasks by
-                priority and contineu building onto projects.
-              </p>
+              <Container textAlign="left">
+                <Header as="h4">Best Performance</Header>
+                <Header.Subheader>
+                  With great details and an excellent managment system, QuickTix
+                  gets you the data you need in a timely manner. Focus tasks by
+                  priority and contineu building onto projects.
+                </Header.Subheader>
+              </Container>
             </Grid.Column>
             <Grid.Column>
               <Card>
-                <Icon name="coffee" size="massive" />
+                <Icon
+                  size="large"
+                  circular
+                  style={{
+                    position: "absolute",
+                    marginLeft: "4%",
+                    color: "#fff",
+                    background: "#fbbc00"
+                  }}
+                >
+                  2
+                </Icon>
+                <Icon
+                  name="clipboard"
+                  size="massive"
+                  style={{ margin: "auto", color: "#9818d6" }}
+                />
               </Card>
-              <p>
-                With great details and an excellent managment system, QuickTix
-                gets you the data you need in a timely manner. Focus tasks by
-                priority and contineu building onto projects.
-              </p>
+              <Container textAlign="left">
+                <Header as="h4">Best Performance</Header>
+                <Header.Subheader>
+                  With great details and an excellent managment system, QuickTix
+                  gets you the data you need in a timely manner. Focus tasks by
+                  priority and contineu building onto projects.
+                </Header.Subheader>
+              </Container>
             </Grid.Column>
             <Grid.Column>
               <Card>
-                <Icon name="coffee" size="massive" />
+                <Icon
+                  size="large"
+                  circular
+                  style={{
+                    position: "absolute",
+                    marginLeft: "4%",
+                    color: "#fff",
+                    background: "#fbbc00"
+                  }}
+                >
+                  3
+                </Icon>
+                <Icon
+                  name="thumbs up"
+                  size="massive"
+                  style={{ margin: "auto", color: "#9818d6" }}
+                />
               </Card>
-              <p>
-                With great details and an excellent managment system, QuickTix
-                gets you the data you need in a timely manner. Focus tasks by
-                priority and contineu building onto projects.
-              </p>
+              <Container textAlign="left">
+                <Header as="h4">Best Performance</Header>
+                <Header.Subheader>
+                  With great details and an excellent managment system, QuickTix
+                  gets you the data you need in a timely manner. Focus tasks by
+                  priority and contineu building onto projects.
+                </Header.Subheader>
+              </Container>
             </Grid.Column>
           </Grid>
         </Container>
       </Container>
+
+      <footer
+        style={{
+          height: "400px",
+          width: "99.1%",
+          background: "#9818d6",
+          marginTop: "20%",
+          borderTopLeftRadius: "250px",
+          borderTopRightRadius: "250px"
+        }}
+      >
+        test
+      </footer>
     </>
   );
 };

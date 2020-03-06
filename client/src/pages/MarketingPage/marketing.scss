@@ -11,31 +11,29 @@ p {
   color: #838589 !important;
 }
 
-.layout {
-  color: #fff;
-  background-size: 100%;
-  background-position-x: 20%;
-  background-image: url("../../assets/overlayElements.jpg");
-  // background-image: url("../../assets/background.jpg");
-  height: 90vh;
-  @media screen and (max-width: 1224px) {
-    background-position: 100%;
-  }
-}
 .topBar {
+  box-shadow: 1px 1px 1px #000;
+  padding: 10px;
+  display: flex;
   width: 100vw !important;
+  background: #9818d6;
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
   h1 {
-    margin-left: 7%;
+    color: #fff;
     width: 30%;
     text-align: left;
-    font-size: 3.2rem;
-    letter-spacing: 10px;
+    font-size: 3rem;
+    letter-spacing: 5px;
+    text-align: center;
     @media screen and (max-width: 800px) {
       font-size: 1.9rem;
     }
   }
 
   nav {
+    padding: 0 2%;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -45,7 +43,7 @@ p {
       color: #fff;
       margin: 0 2%;
       text-decoration: none;
-      text-shadow: 1px 1px 5px #000;
+      text-shadow: 1px 1px 1px #000;
       @media screen and (max-width: 1224px) {
         font-size: 0.9rem;
       }
@@ -53,6 +51,17 @@ p {
         font-size: 0.8rem;
       }
     }
+  }
+}
+.layout {
+  color: #fff;
+  background-size: 100%;
+  background-position-x: 2%;
+  background-image: url("../../assets/overlayElements.jpg");
+  // background-image: url("../../assets/background.jpg");
+  height: 80vh;
+  @media screen and (max-width: 1224px) {
+    background-position: 100%;
   }
 }
 
@@ -67,7 +76,7 @@ h2 {
   color: #fff !important;
   border-radius: 50px !important;
   padding: 2% 4% !important;
-  margin-top: 3% !important;
+  margin-top: 5% !important;
   font-size: 1.2rem !important;
   &:first-child {
     background: #9818d6;
@@ -75,7 +84,7 @@ h2 {
   }
   &:last-child {
     background: none;
-    border: 1px solid #fff;
+    border: 3px solid #fff;
   }
 }
 
