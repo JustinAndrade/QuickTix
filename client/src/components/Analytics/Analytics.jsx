@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+
 import {
   Container,
   Card,
@@ -14,12 +16,13 @@ import {
   Sidebar,
   Search,
   Sea,
-  GridColumn
+  GridColumn,
 } from "semantic-ui-react";
 import { Bar } from "react-chartjs-2";
 import ProgressBar from "./progressBar";
 import ResponseTrends from "./responseTrends";
 import TicketsTable from "../TicketsTable/table";
+import { getTickets } from "../../redux/actions";
 
 import "./analytics.scss";
 import Projects from "./projects";
@@ -27,55 +30,66 @@ import Projects from "./projects";
 export const cardStyle = {
   margin: "5px",
   width: "30%",
-  height: "4500px"
+  height: "4500px",
 };
 
-const Analytics = () => (
-  <Container
-    style={{
-      border: "2px solid red",
-      marginRight: "0 !important",
-      marginLeft: "0 !important",
-      width: "90vw"
-    }}
-  >
-    <Grid
-      stretched
-      columns={3}
+const Analytics = (props) => {
+  useEffect(() => {
+    props.getTickets();
+  });
+  return (
+    <Container
       style={{
-        border: "5px solid yellow",
-        justifyContent: "space-around",
-        margin: "auto"
+        marginRight: "0 !important",
+        marginLeft: "0 !important",
+        width: "88vw",
+        float: "left",
       }}
     >
-      <Grid.Row verticalAlign>
-        <Grid.Column width={4}>
-          <Card fluid>
-            <CardHeader textAlign="left">Tickets</CardHeader>
-            <CardContent></CardContent>
-            <ProgressBar />
-          </Card>
-        </Grid.Column>
-        <Grid.Column>
-          <Card fluid>
-            <CardHeader textAlign="left">Projects</CardHeader>
-            <CardContent style={{ padding: "50px 0 0 0" }}>
-              <Projects />
-            </CardContent>
-          </Card>
-        </Grid.Column>
-        <Grid.Column>
-          <Card fluid>
-            <CardHeader textAlign="left">TSR Response Trends</CardHeader>
-            <CardContent style={{ padding: "50px 0 0 0" }}>
-              <ResponseTrends />
-            </CardContent>
-          </Card>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-    <TicketsTable />
-  </Container>
-);
+      <Grid
+        stretched
+        columns={3}
+        style={{
+          justifyContent: "space-around",
+          margin: "auto",
+        }}
+      >
+        <Grid.Row>
+          <Grid.Column width={4}>
+            <Card fluid>
+              <CardHeader textAlign="left">Tickets</CardHeader>
+              <CardContent></CardContent>
+              <ProgressBar tickets={props.tickets} />
+            </Card>
+          </Grid.Column>
+          <Grid.Column>
+            <Card fluid>
+              <CardHeader textAlign="left">Projects</CardHeader>
+              <CardContent style={{ padding: "50px 0 0 0" }}>
+                <Projects tickets={props.tickets} />
+              </CardContent>
+            </Card>
+          </Grid.Column>
+          <Grid.Column>
+            <Card fluid>
+              <CardHeader textAlign="left">TSR Response Trends</CardHeader>
+              <CardContent style={{ padding: "50px 0 0 0" }}>
+                <ResponseTrends tickets={props.tickets} />
+              </CardContent>
+            </Card>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
 
-export default Analytics;
+      <TicketsTable tickets={props.tickets} />
+    </Container>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    tickets: state.tickets,
+  };
+};
+
+export default connect(mapStateToProps, { getTickets })(Analytics);

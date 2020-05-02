@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import {
   Card,
   Container,
@@ -13,7 +13,7 @@ import {
   Sidebar,
   Search,
   Sea,
-  GridColumn
+  GridColumn,
 } from "semantic-ui-react";
 import { Route } from "react-router-dom";
 
@@ -28,10 +28,7 @@ import ProfilePage from "../../pages/ProfilePage";
 import "./sidebar.scss";
 
 const SidebarMenu = () => (
-  <Sidebar.Pushable
-    as={Segment}
-    style={{ height: "100%", border: "2px solid green" }}
-  >
+  <Sidebar.Pushable as={Segment} style={{ height: "100vh" }}>
     <Sidebar as={Menu} icon="labeled" vertical visible width="thin">
       <Menu.Item as="a">
         <img style={{ margin: "0 auto" }} src={logo} />
@@ -57,7 +54,7 @@ const SidebarMenu = () => (
       </Menu.Item>
     </Sidebar>
 
-    <Sidebar.Pusher style={{ border: "2px solid blue" }}>
+    <Sidebar.Pusher>
       <Segment style={{ backgroundColor: "#f5f7fb" }}>
         <Grid
           columns="equal"
@@ -65,7 +62,7 @@ const SidebarMenu = () => (
             display: "flex",
             padding: "1% 3%",
             alignItems: "center",
-            width: "90vw"
+            width: "90vw",
           }}
         >
           <Header color="yellow" as="h1">
@@ -103,6 +100,7 @@ const SidebarMenu = () => (
         {/*  Routes */}
 
         <Route path="/welcome/tickets" component={Analytics} />
+        <Analytics />
         <Route path="/welcome/profile" component={ProfilePage} />
       </Segment>
     </Sidebar.Pusher>

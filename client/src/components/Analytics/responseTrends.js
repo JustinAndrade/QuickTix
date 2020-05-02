@@ -7,16 +7,16 @@ const data = {
   datasets: [
     {
       borderWidth: 1,
-      data: [65, 22, 122]
-    }
-  ]
+      data: [65, 22, 122],
+    },
+  ],
 };
 
 const options = {
   legend: {
-    display: false
+    display: false,
   },
-  maintainAspectRatio: false
+  maintainAspectRatio: false,
 };
 
 const ResponseTrends = () => {
